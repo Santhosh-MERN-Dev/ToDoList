@@ -2,26 +2,26 @@ let todoItemsContainer = document.getElementById("todoItemsContainer");
 let addTodoButton = document.getElementById("addTodoButton");
 
 let todoList = JSON.parse(localStorage.getItem('todoList')) || [
-  {
-    text: "Learn HTML",
-    uniqueNo: 1,
-    createdAt: new Date().toLocaleString()
-  },
-  {
-    text: "Learn CSS",
-    uniqueNo: 2,
-    createdAt: new Date().toLocaleString()
-  },
-  {
-    text: "Learn JavaScript",
-    uniqueNo: 3,
-    createdAt: new Date().toLocaleString()
-  },
-  {
-    text: "Learn React JS",
-    uniqueNo: 4,
-    createdAt: new Date().toLocaleString()
-  }
+  // {
+  //   text: "Learn HTML",
+  //   uniqueNo: 1,
+  //   createdAt: new Date().toLocaleString()
+  // },
+  // {
+  //   text: "Learn CSS",
+  //   uniqueNo: 2,
+  //   createdAt: new Date().toLocaleString()
+  // },
+  // {
+  //   text: "Learn JavaScript",
+  //   uniqueNo: 3,
+  //   createdAt: new Date().toLocaleString()
+  // },
+  // {
+  //   text: "Learn React JS",
+  //   uniqueNo: 4,
+  //   createdAt: new Date().toLocaleString()
+  // }
 ];
 
 let todosCount = todoList.length;
