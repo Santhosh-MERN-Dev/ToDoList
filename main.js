@@ -1,3 +1,26 @@
+let themeToggle = document.getElementById("themeToggle");
+let themeIcon = document.getElementById("themeIcon");
+let currentTheme = localStorage.getItem("theme") || "light";
+
+if (currentTheme === "dark") {
+  document.documentElement.setAttribute("data-theme", "dark");
+  themeIcon.classList.replace("fa-moon", "fa-sun");
+}
+
+themeToggle.addEventListener("click", function () {
+  let html = document.documentElement;
+  let isDark = html.getAttribute("data-theme") === "dark";
+  if (isDark) {
+    html.removeAttribute("data-theme");
+    themeIcon.classList.replace("fa-sun", "fa-moon");
+    localStorage.setItem("theme", "light");
+  } else {
+    html.setAttribute("data-theme", "dark");
+    themeIcon.classList.replace("fa-moon", "fa-sun");
+    localStorage.setItem("theme", "dark");
+  }
+});
+
 let todoItemsContainer = document.getElementById("todoItemsContainer");
 let addTodoButton = document.getElementById("addTodoButton");
 
