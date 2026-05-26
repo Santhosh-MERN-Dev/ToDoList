@@ -91,18 +91,24 @@ function createAndAppendTodo(todo) {
   labelContainer.classList.add("label-container", "d-flex", "flex-row");
   todoElement.appendChild(labelContainer);
 
+  let contentWrap = document.createElement("div");
+  contentWrap.classList.add("todo-content-wrap");
+  labelContainer.appendChild(contentWrap);
+
   let labelElement = document.createElement("label");
   labelElement.setAttribute("for", checkboxId);
   labelElement.id = labelId;
   labelElement.classList.add("checkbox-label");
   labelElement.textContent = todo.text;
-  labelContainer.appendChild(labelElement);
+  contentWrap.appendChild(labelElement);
 
-  // new: created-at meta
   let metaElement = document.createElement("span");
   metaElement.classList.add("todo-meta");
-  metaElement.textContent = todo.createdAt ? todo.createdAt : "";
-  labelContainer.appendChild(metaElement);
+  let metaIcon = document.createElement("i");
+  metaIcon.classList.add("far", "fa-calendar-alt", "me-1");
+  metaElement.appendChild(metaIcon);
+  metaElement.append(" " + (todo.createdAt ? todo.createdAt : ""));
+  contentWrap.appendChild(metaElement);
 
   let deleteIconContainer = document.createElement("div");
   deleteIconContainer.classList.add("delete-icon-container");
